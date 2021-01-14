@@ -1,3 +1,3 @@
-module github.com/andrew-suh/crawlin
+module crawlin
 
 go 1.15

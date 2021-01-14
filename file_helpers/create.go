@@ -1,5 +1,10 @@
 //Package file_writer simplifies file creation and writing process
 package file_helpers
+import (
+  "os"
+  "fmt"
+)
+
 //CreatWrite creates a file with an imported name 
 //and dumps the string body into created file
 
@@ -31,5 +36,5 @@ func CreateWrite(filename,body string) string {
     fmt.Println("Error: ", err)
     os.Exit(1)
   }
-  return "Successfully finished writing to" + filename
+  return "Successfully finished writing to: " + filename
 }
