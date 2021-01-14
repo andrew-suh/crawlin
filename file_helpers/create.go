@@ -1,5 +1,5 @@
 //Package file_writer simplifies file creation and writing process
-
+package file_helpers
 //CreatWrite creates a file with an imported name 
 //and dumps the string body into created file
 
