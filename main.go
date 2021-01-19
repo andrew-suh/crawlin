@@ -1,31 +1,22 @@
 package main
 import (
-  "net/http"
-  "io/ioutil"
+  "os"
   "fmt"
-  "crawlin/file_helpers"
+  "crawlin/helper"
 )
 
 func main() {
-  //Get request
-  resp, err := http.Get("https://golang.org/pkg/fmt/")
 
-  //check for an error
-  if err != nil {
-    panic(err)
+  if len(os.Args) < 2 {
+    fmt.Println("Input a url")
+    os.Exit(1)
   }
+  get_url := os.Args[1]
 
-  //close response body when finished request
-  defer resp.Body.Close()
-
-  //Read the Body content from the request
-  body, err := ioutil.ReadAll(resp.Body)
-
-  //delete line later
-  fmt.Printf("type: %T\n",body)
+  stringed_body := helper.GetBodyUrl(get_url)
 
   //Use custom func to write to filename
-  end := file_helpers.CreateWrite("dump.txt",string(body))
+  end := helper.CreateWrite("dump.txt",stringed_body)
 
   fmt.Println(end)
 }

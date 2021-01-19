@@ -1,5 +1,5 @@
 //Package file_writer simplifies file creation and writing process
-package file_helpers
+package helper
 import (
   "os"
   "fmt"
